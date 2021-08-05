@@ -41,6 +41,15 @@ And to run just the backend test:
 mvn -Dtest=CredifyLoanOfferApiTest test
 ```
 
+Implemented Technical features
+-------------------------------
+* Properties externalization (object repository and application properties)
+* Generics 
+* Reflection
+* Json to Object data binding (Jackson data binding)
+* Selenium
+* Rest Assured
+
 Logging
 -------
 
