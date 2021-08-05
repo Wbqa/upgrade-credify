@@ -12,6 +12,7 @@ Prerequisites
 ----------------
 * Java JDK 8
 * Maven
+* Google Chrome v.92
 
 Project Structure
 -----------------------------------
