@@ -20,23 +20,23 @@ Two profile groups are supported:
 1) Specify choice of browser (currently chrome and firefox profiles are supported with chrome being default and firefox works with some exceptions)  
 2) Target environment (localhost being default, others can be added for dev, qa, prod etc.)
 
-You can run both UI and backend tests in Chrome on the localhost with the below mvn command:
+You can run both UI and backend tests together using the below mvn command by passing chrome and localhost settings as profiles:
 
 ```
 mvn -P chrome,localhost test
 ```
-OR
+Or use the below command with profile defaults assumed to chrome and localhost:
 ```
 mvn test
 ```
 
-You can also run just the UI or backend tests separately, the below command will run just the UI test: 
+You can also run either UI or backend tests individually, to run just the UI test: 
 
 ```
 mvn -Dtest=CredifyLoanOfferUITest test
 ```
 
-And to run just run the backend test: 
+And to run just the backend test: 
 
 ```
 mvn -Dtest=CredifyLoanOfferApiTest test
