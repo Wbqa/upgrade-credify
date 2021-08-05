@@ -11,7 +11,7 @@
 Project Structure
 -----------------------------------
 
-The project follows standard Maven structure and all corresponding tests and common framework related code is present in `src/test/java` and  `src/main/java` folders. Configuration files (i.e .properties), Data files (i.e. .xlsx) and Web Driver capabilities files (*.capabilities) are present under `src/test/resources` folder.
+The project follows standard Maven structure and all corresponding tests and common framework related code is present in `src/test/java` and  `src/main/java` folders. Configuration files (i.e *.properties), Data files (i.e. *.xlsx) and Web Driver capabilities files (*.capabilities) are present under `src/test/resources` folder.
 
 Project Configuration and Execution
 ------------------------------------
@@ -50,6 +50,8 @@ Implemented Technical features
 * Json to Object data binding (Jackson data binding)
 * Selenium
 * Rest Assured
+* TestNG
+* Data providers
 
 Logging
 -------
