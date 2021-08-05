@@ -1,17 +1,17 @@
 # Credify Automation Testcases 
 
-## This project covers below test cases: 
-* Selenium web automation for Credify website loan offer flow and validation       
-  - Testcase Class: com.upgrade.automation.ui.test.CredifyLoanOfferUITest
-* Backend Credify API automation and verification
-  - Testcase Class: com.upgrade.automation.api.test.CredifyLoanOfferApiTest 
+## This project covers below test cases for Credify: 
+* Selenium web automation for Credify website loan offer        
+  - Testcase class: *com.upgrade.automation.ui.test.CredifyLoanOfferUITest*
+* Backend Credify API automation
+  - Testcase class: *com.upgrade.automation.api.test.CredifyLoanOfferApiTest* 
 
 *For more info refer to: Coding Challenge PDF*
   
 Project Structure
 -----------------------------------
 
-The project follows the standard Maven structure and all corresponding tests and common framework related code is present in `src/test/java` and  `src/main/java` folders. Configuration files (i.e .properties), Data files (i.e. .xlsx) and Web Driver capabilities files (*.capabilities) are present under `src/test/resources` folder.
+The project follows standard Maven structure and all corresponding tests and common framework related code is present in `src/test/java` and  `src/main/java` folders. Configuration files (i.e .properties), Data files (i.e. .xlsx) and Web Driver capabilities files (*.capabilities) are present under `src/test/resources` folder.
 
 Project Configuration and Execution
 ------------------------------------
@@ -44,4 +44,4 @@ mvn -Dtest=CredifyLoanOfferApiTest test
 Logging
 -------
 
-Project uses log4j for logging and you can adjust the log level in log4j.properties file by changing it to DEBUG / INFO / WARN depending on your needs.
+Project uses log4j for logging and you can adjust the log level in log4j.properties file by changing it to `DEBUG` / `INFO` / `WARN` depending on your logging needs.
