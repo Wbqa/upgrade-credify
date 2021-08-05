@@ -1,10 +1,6 @@
 package com.upgrade.automation.ui.pages;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Hashtable;
-import java.util.List;
-
+import com.upgrade.automation.ui.constants.PageConstants;
 import org.apache.log4j.Logger;
 import org.joda.time.LocalDate;
 import org.openqa.selenium.By;
@@ -12,7 +8,10 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.upgrade.automation.ui.constants.PageConstants;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Hashtable;
+import java.util.List;
 
 public class GetStartedPage extends BasePage<WebDriver> {
 
@@ -23,10 +22,7 @@ public class GetStartedPage extends BasePage<WebDriver> {
 	    logger.debug("Webdriver initialized");		
 	}
 
-    //To-do's - add date formatter to helpers
-    //add checkbox function in a helper
-
-    public OfferPage submitIndividualForm(Hashtable<String, String> userData) throws InterruptedException {
+    public OfferPage submitIndividualForm(Hashtable<String, String> userData){
         getDriver().findElement(By.cssSelector(getObjectRepoProperty(PageConstants.FIRST_NAME))).sendKeys(userData.get(PageConstants.FIRST_NAME));
         getDriver().findElement(By.cssSelector(getObjectRepoProperty(PageConstants.LAST_NAME))).sendKeys(userData.get(PageConstants.LAST_NAME));
         getDriver().findElement(By.cssSelector(getObjectRepoProperty(PageConstants.ADDRESS))).sendKeys(userData.get(PageConstants.ADDRESS));

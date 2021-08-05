@@ -16,8 +16,6 @@ public class MainPage extends BasePage<WebDriver> {
 	    logger.debug("Navigated to: " + getAppProperty("site.base.url"));	
 	}
 
-	//To-do's - select code in helper
-
 	public GetStartedPage doCheckYourRate(String loanAmount, String loanPurpose) {
         getDriver().findElement(By.cssSelector(getObjectRepoProperty("loan_amount"))).sendKeys(loanAmount);
         Select select = new Select(getDriver().findElement(By.cssSelector(getObjectRepoProperty("loan_purpose"))));
