@@ -1,6 +1,6 @@
 # Credify Automation Testcases 
 
-## This project covers below test cases for Credify: 
+## This project covers below test cases for Credify
 * Selenium web automation for Credify website loan offer        
   - Testcase class: *com.upgrade.automation.ui.test.CredifyLoanOfferUITest*
 * Backend Credify API automation
