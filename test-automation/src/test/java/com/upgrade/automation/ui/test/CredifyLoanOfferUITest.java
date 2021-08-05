@@ -16,7 +16,12 @@ import com.upgrade.automation.ui.pages.OfferPage;
 
 public class CredifyLoanOfferUITest extends BaseUITest{
 
-    @Test(dataProviderClass = ExcelDataProvider.class, dataProvider = "user_data_dp")
+	/*
+	 * Verify via the UI that as a loan borrower - you are seeing loan offers, upon
+	 * filling the required form fields with valid inputs.
+	 */
+
+	@Test(dataProviderClass = ExcelDataProvider.class, dataProvider = "user_data_dp")
     public void loanOfferTest(Hashtable<String,String> userData) throws InterruptedException {
 
         MainPage mp = getPage(MainPage.class);

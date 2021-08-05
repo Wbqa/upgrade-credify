@@ -21,20 +21,32 @@ public class CredifyLoanOfferApiTest extends BaseApiTest {
 
 	private static final Logger logger = Logger.getLogger(CredifyLoanOfferApiTest.class);	
 	
+	/*
+	 * Validate that for correct loanAppUuid provided in the payload below, the API
+	 * response code is a 200 (OK). Parse each json value in the response payload
+	 * individually. Then validate the productType attribute has value PERSONAL_LOAN
+	 */
 	@Test(dataProviderClass = ExcelDataProvider.class, dataProvider = "user_data_dp")
 	public void verifyLoanAppExistsTest(Hashtable<String, String> data) {
 		logger.info("Running testcase to verify if Loan application exists...");
+		
+		//Request payload
 		ResumeRequest resumeRequest = createResumeRequest(data);
 		
+		//Request headers
 		Map<String,String> headers = new HashMap<>();		
 		headers.put("x-cf-source-id", data.get("x-cf-source-id"));
 		headers.put("x-cf-corr-id", data.get("x-cf-corr-id"));
 		
 		String contentType = "application/x-www-form-urlencoded; charset";
 
+		//Making a POST call
 		Response response = RestResourceUtil.post(ApiConstants.API_RESUME_URL, contentType, headers, resumeRequest);		
+		
+		//Parsing each json value in the response payload individually using pojo
 		ResumeResponse resumeResponse = response.as(ResumeResponse.class);
 		
+		//Store productType and status code recieved from response for validations
 		String productType = resumeResponse.getLoanAppResumptionInfo().getProductType();
 		int statusCode = response.getStatusCode();
 
@@ -43,28 +55,40 @@ public class CredifyLoanOfferApiTest extends BaseApiTest {
 
 		logger.info("Product Type received from Api : " +  productType);
 		logger.info("Expected product type : " +  data.get("expectedProductType"));
-
+		
+		//Validate productType and status code are matching with expected values
 		Assert.assertEquals(productType, data.get("expectedProductType"));
 		Assert.assertEquals(statusCode, (int)Double.valueOf(data.get("expectedStatusCode")).doubleValue());
 	}
-
+	
+	/*
+	 * Validate that in the initial POST request, if a different loanAppUuid is
+	 * provided (that doesn't exist in our system) - the API response is a 404
+	 * (NOT_FOUND)
+	 */
 	@Test(dataProviderClass = ExcelDataProvider.class, dataProvider = "user_data_dp")
 	public void verifyLoanAppNotExistsTest(Hashtable<String, String> data) {
 		logger.info("Running testcase to verify if Loan application does not exist (passing wrong loan UUID)...");
 		
+		//request payload with non-existent uuid
 		ResumeRequest resumeRequest = createResumeRequest(data);
 		
+		//request headers
 		Map<String,String> headers = new HashMap<>();		
 		headers.put("x-cf-source-id", data.get("x-cf-source-id"));
 		headers.put("x-cf-corr-id", data.get("x-cf-corr-id"));
 		
 		String contentType = "application/x-www-form-urlencoded; charset";
 
+		//making a post call
 		Response response = RestResourceUtil.post(ApiConstants.API_RESUME_URL, contentType, headers, resumeRequest);				
+		
+		//storing the error code for validation
 		int statusCode = response.getStatusCode();
 		logger.info("Response status code: " + statusCode);
 		logger.debug("Response Json: \n" + response.body().toString());
-
+		
+		//validate the error code
 		Assert.assertEquals(statusCode, (int)Double.valueOf(data.get("expectedStatusCode")).doubleValue());
 	}
 
