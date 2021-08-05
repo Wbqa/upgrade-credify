@@ -15,10 +15,9 @@ The project follows the standard Maven structure and all corresponding tests and
 
 Project Configuration and Execution
 ------------------------------------
-The project uses Maven profiles to set configuration parameters. 
-Two profile groups are supported: 
-1) Specify choice of browser (currently chrome and firefox profiles are supported with chrome being default and firefox works with some exceptions)  
-2) Target environment (localhost being default, others can be added for dev, qa, prod etc.)
+The project uses maven profiles to set configuration parameters and currently two profile groups are supported: 
+1) Specify choice of the browser (currently chrome and firefox profiles are supported with chrome being default and firefox works with some exceptions)  
+2) Target environment such as localhost, QA, Dev, Prod etc. with localhost being default and only profile currently supported
 
 You can run both UI and backend tests together using the below mvn command by passing chrome and localhost settings as profiles:
 
