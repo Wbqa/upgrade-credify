@@ -49,6 +49,7 @@ Implemented Technical features
 * Inheritance and Polymorphism
 * Json to Object data binding (Jackson data binding)
 * Selenium
+* Page Object Model
 * Rest Assured
 * TestNG
 * Data providers
