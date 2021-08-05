@@ -7,7 +7,12 @@
   - Testcase class: *com.upgrade.automation.api.test.CredifyLoanOfferApiTest* 
 
 *For more info refer to: Coding Challenge PDF*
-  
+
+Prerequisites
+----------------
+* Java JDK 8
+* Maven
+
 Project Structure
 -----------------------------------
 
