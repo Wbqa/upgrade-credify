@@ -46,6 +46,7 @@ Implemented Technical features
 * Properties externalization (object repository and application properties)
 * Generics 
 * Reflection
+* Inheritance and Polymorphism
 * Json to Object data binding (Jackson data binding)
 * Selenium
 * Rest Assured
